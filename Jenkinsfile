@@ -18,9 +18,7 @@ pipeline {
         }
         stage ('Tag Image') {
             steps {
-                script {
-                    docker tag myproject:latest 307854153830.dkr.ecr.${AWS_REGION}.amazonaws.com/myproject:latest
-                }
+                sh "docker tag myproject:latest 307854153830.dkr.ecr.${AWS_REGION}.amazonaws.com/myproject:latest"
             }
         }
         stage ('Push Image') {

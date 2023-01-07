@@ -23,9 +23,9 @@ pipeline {
         }
         stage ('Push Image') {
             steps {
-                script {
-                    docker push 307854153830.dkr.ecr.${AWS_REGION}.amazonaws.com/myproject:latest
-                }
+                
+                sh "docker push 307854153830.dkr.ecr.${AWS_REGION}.amazonaws.com/myproject:latest"
+                
             }
         }
     }
